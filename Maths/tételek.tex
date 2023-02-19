@@ -1710,7 +1710,7 @@ Egy $\{a_n\}$ sorozatnak K felső korlátja, ha $a_n \leq K$ minden pozitív eg�
 \end{definition}
 
 \begin{definition}
-Egy $\{a_n\}$ sorozatnak k alsó korlátja, ha $a_n \geq K$ minden pozitív egész n-re teljesül. Ilyenkor a sorozatot \textbf{alulról korlátos}nak nevezzük.
+Egy $\{a_n\}$ sorozatnak k alsó korlátja, ha $a_n \geq k$ minden pozitív egész n-re teljesül. Ilyenkor a sorozatot \textbf{alulról korlátos}nak nevezzük.
 \end{definition}
 
 \begin{definition}
@@ -1782,7 +1782,7 @@ $S_n=a_n+(a_n-d)+(a_n-2d)+...+(a_n-(n-3)d)+(a_n-(n-2)d)+(a_n-(n-1)d)$
 Összeadva:
 $2S_n=\underbrace{(a_1+a_n)+(a_1+a_n)+...+(a_1+a_n)}_{n}$.
 
-$$2S=(a_1+a_n)\cdot n$$
+$$2S_n=(a_1+a_n)\cdot n$$
 $$S_n=\dfrac{a_1+a_n}{2}\cdot n$$
 \end{proof}
 
@@ -3516,7 +3516,7 @@ Tetszőleges két vektor \textbf{skaláris szorzata} a két vektor abszolút ér
 \textbf{Skaláris szorzat tulajdonságai:}
 \begin{enumerate}
 \item \textbf{kommutatív:} $\vec{a}\cdot \vec{b}=\vec{b}\cdot \vec{a}$
-\item \textbf{disztributív:} $\begin{cases}\lambda\cdot(\vec{a}\cdot\vec{b})=(\lambda\cdot\vec{a})\cdot\vec{b}=\vec{a}\cdot(\lambda\cdot\vec{b})\\(\vec{a}+\vec{b})\cdot c =\vec{a}\cdot c +\vec{b}\cdot c  \end{cases}$
+\item \textbf{disztributív:} $\begin{cases}\lambda\cdot(\vec{a}\cdot\vec{b})=(\lambda\cdot\vec{a})\cdot\vec{b}=\vec{a}\cdot(\lambda\cdot\vec{b})\\(\vec{a}+\vec{b})\cdot \vec{c} =\vec{a}\cdot \vec{c} +\vec{b}\cdot \vec{c}  \end{cases}$
 \end{enumerate}
 
 \begin{theorem}
@@ -4498,10 +4498,25 @@ A visszatevés nélküli mintavétel eloszlását \textbf{hipergeometrikus elosz
 Hipergeometrikus eloszlásnál legyen N db elemünk, amelyből M db elem rendelkezik egy adott A tulajdonsággal, N - M db pedig nem. Kiválasztunk véletlenszerűen visszatevés nélkül n db-ot. Annak a valószínűsége, hogy a kihúzott n db elem közül k db rendelkezik az A tulajdonsággal:
 \[P(\xi =k)=\dfrac{\displaystyle\binom{M}{k}\cdot \displaystyle\binom{N-M}{n-k}}{\displaystyle\binom{N}{n}} \text{\normalfont , ahol } k\leq n.\]
 \end{theorem}
+
+\begin{proof}
+
+A kérdés az, hogy mennyi a valószínűsége annak, hogy a kihúzott $n$ db elem között $k$ db $A$ tulajdonságú elem van.
+
+A kombinatorikában tanultak szerint a kedvező esetek száma: $\displaystyle\binom{M}{k}\cdot \displaystyle\binom{N-M}{n-k}$, mert $M$ db-ból kell $k$ db-ot kiválasztani, amit $\displaystyle\binom{M}{k}$-féleképpen tehetünk meg, és a maradék $N - M$ db-ból $n - k$ db-ot kell kiválasztanunk, amit $\displaystyle\binom{N-M}{n-k}$-féleképpen tehetünk meg.
+
+Az összes esetek száma: $\displaystyle\binom{N}{n}$, mert $N$ db-ból kell $n$ db-ot választani.
+
+Ezt felhasználva kapjuk:
+\[P(\xi =k)=\dfrac{\displaystyle\binom{M}{k}\cdot \displaystyle\binom{N-M}{n-k}}{\displaystyle\binom{N}{n}} \text{\normalfont , ahol } k\leq n.\]
+
+\end{proof}
+
 \begin{theorem}
 A hipergeometrikus eloszlásnál az A tulajdonságú elemek számának várható értéke:
 \[M(\xi)=n\cdot p=n\cdot\dfrac{M}{N}\]
 \end{theorem}
+\newpage
 \subsection{Alkalmazások}
 \begin{itemize}
 \item Kiválasztási problémák:
@@ -4652,6 +4667,29 @@ Binomiális eloszlásnál ha a kísérletet n-szer ismételjük, akkor annak val
 \[P(\xi=k)=\binom{n}{k}\cdot p^k\cdot (1-p)^{n-k}\text{\normalfont , ahol }k\leq n.\]
 (Binomiális eloszlásra vezetnek a visszatevéses mintavétel esetei, ahol n elem közül p valószínűséggel választunk valamilyen tulajdonsággal rendelkezőt oly módon, hogy a kivett elemet az újabb húzás előtt visszatesszük.)
 \end{theorem}
+
+\begin{proof}
+Tegyük fel, hogy a visszatevéses mintavételeknél $N$ db elem közül választunk ki $n$ db-ot. Legyen $M$ db elem $A$ tulajdonságú, $N - M$ db elem $\bar{A}$ tulajdonságú.
+
+A visszatevéses mintavétel azt jelenti, hogy minden egyes húzás után visszatesszük a kihúzott elemet, így a húzások egymástól függetlenek lesznek. A kérdés az, hogy mennyi a valószínűsége annak, hogy a kihúzott $n$ db elem között $k$ db $A$ tulajdonságú elem van.
+
+A kombinatorikában tanultak szerint a kedvező esetek száma $\displaystyle\binom{n}{k}\cdot M^k\cdot(N-M)^{n-k}$, mert
+$k$-szor kell $M$ db golyóból választanunk, $n - k$-szor kell $N - M$ db golyó közül, és ez $\displaystyle\binom{n}{k}$ -féleképpen fordulhat elő aszerint, hogy hányadik húzás az $A$ tulajdonságú.
+
+Az összes esetek száma $N^n$, mert $n$-szer húzunk $N$ elemből.
+Így
+
+\[P=\dfrac{\displaystyle\binom{n}{k}\cdot M^k\cdot(N-M)^{n-k}}{N^n}=
+\binom{n}{k}\cdot \dfrac{M^k}{N^k}\cdot \dfrac{(N-M)^{n-k}}{N^{n-k}}=
+\binom{n}{k}\cdot \left(\dfrac{M}{N}\right)^k\cdot\left(\dfrac{N-M}{N}\right)^{n-k}.\]
+
+Tudjuk, hogy annak az esélye, hogy $A$ tulajdonságút húzunk: $P(A)=\dfrac{M}{N}=p$, hogy nem $A$ tulajdonságút húzunk: $P(\bar{A})=1-p=1-\dfrac{M}{N}=\dfrac{N-M}{N}$.
+
+Ezt felhasználva kapjuk:
+\[P(\xi=k)=\binom{n}{k}\cdot p^k\cdot (1-p)^{n-k}\text{\normalfont , ahol }k\leq n.\]
+
+\end{proof}
+
 \begin{theorem}
 A binomiális eloszlásnál az A tulajdonságú elemek számának várható értéke:
 \[M(\xi)=n\cdot p=n\cdot\dfrac{M}{N}\]
