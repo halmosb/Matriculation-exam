@@ -1996,6 +1996,16 @@ Ha $c \in D_f$, akkor a c helyen felvett függvényértéket $f(c)$-vel jelölj�
 Ha az értelmezési tartomány és az értékkészlet is számhalmaz, akkor a függvényt grafikonon tudjuk szemléltetni. A \textbf{grafikon} az $(x; f(x))$ pontok halmaza.
 \end{definition}
 
+\begin{definition}[\textbf{Heine-féle definíció}]
+Legyen $f(x)$ értelmezve $x_0$ valamely környezetében (kivéve esetleg az $x_0$ pontot). Az $f(x)$ függvény $x_0$ helyen vett \textbf{határérték}e $A$, ha minden olyan $x_n\to x_0$ sorozatra, amelynek összes elemére $x_n(\neq x_0)\in D_f, f(x_n)\to A$.
+\end{definition}
+
+\begin{definition}[\textbf{Cauchy-féle definíció}]
+Legyen $f(x)$ értelmezve $x_0$ valamely környezetében (kivéve esetleg az $x_0$ pontot). Az $f(x)$ függvény $x_0$ helyen vett \textbf{határérték}e $A$, ha bármely $\varepsilon>0$-hoz létezik olyan $\varepsilon$-tól függő $\delta>0$, hogy minden $x\in D_f$-re ha $0<|x-x_0|<\delta$, akkor $|f(x)-A|<\varepsilon$.
+Jele:
+\[\lim_{x\to x_0}f(x)=A.\]
+\end{definition}
+
 \subsection{Differenciálhányados}
 
 \begin{definition}
