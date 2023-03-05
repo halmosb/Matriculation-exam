@@ -4259,6 +4259,14 @@ $ABCD$ konkáv négyszög, átlóinak metszéspontja $M$ a virtuális átlót $x
 
 Az $ABD$ háromszög területe egyenlő az $ABCD$ négyszög területének és a $BCD$ háromszög területének összegével, így
 $$t_{ABCD}=t_{ABD\Delta}-t_{BCD\Delta}=t_{ABM\Delta}+t_{AMD\Delta}-t_{CBM\Delta}-t_{CMD\Delta}$$
+
+\[=\dfrac{(f+y)(e-x)\sin(180^\circ-\varphi)}{2}+\dfrac{x(y+f)\sin(\varphi)}{2}-\dfrac{xy\sin(\varphi)}{2}-\dfrac{(e-x)y\sin(180^\circ-\varphi)}{2}=\]
+
+\[=\dfrac{\sin \varphi}{2}\Bigl((f+y)(e-x)+x(y+f)-xy-(e-x)y \Bigl)=\]
+
+\[=\dfrac{\sin \varphi}{2}\Bigl((e-x)(f+y-y)+x(y+f-y) \Bigl)=\]
+
+\[=\dfrac{\sin \varphi}{2}\Bigl((e-x)f+xf \Bigl)=\dfrac{e\cdot f\cdot \sin \varphi}{2}.\]
 \end{proof}
 
 \begin{theorem}
@@ -4274,12 +4282,13 @@ ahol r: a beírt kör sugara, R: a körülírt kör sugara.
 \begin{theorem}
 \textbf{Az r sugarú kör területe}: $r^2\pi$ (sorozatok határértékével)
 \end{theorem}
-
+\newpage
 \subsection{Határozott integrál}
 A határozott integrál segítségével függvénygörbe vonalával határolt síkidomok területét is meg tudjuk határozni. Ehhez először a \textbf{görbe alatti terület}et kell vizsgálnunk.
 \begin{definition}
 \textbf{Görbe alatti terület}nek nevezzük egy $[a; b]$ intervallumon folytonos, korlátos, pozitív értékű f függvény görbéjének az intervallumhoz tartozó íve, az x = a, az x = b egyenesek és az x tengely által határolt területet.
-\begin{figure}[h]
+
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\textwidth]{gorbe_alatti_terulet_def}
 \end{figure}
@@ -4294,7 +4303,7 @@ Tekintsük ennek a felosztásnak egy intervallumát: $[x_{i - 1}; x_i]$. Jelölj
 \centering
 \includegraphics[width=0.2\textwidth]{gorbe_alatti_terulet_felosztasa}
 \end{figure}
-\newpage
+
 Az $[x_{i - 1}; x_i]$ intervallum fölé szerkesszünk olyan téglalapokat, amelyeknek másik oldala $m_i$, illetve $M_i$. Végezzük el a szerkesztést a felosztás minden intervallumában és egyesítsük a kisebb téglalapokat és a nagyobb téglalapokat külön két sokszögbe. Ekkor a vizsgált tartomány egy \textbf{beírt}, illetve egy \textbf{körülírt sokszögét} kapjuk. Ezeknek a sokszögeknek a területét vizsgáljuk.
 
 A beírt sokszög területe az \textbf{alsó közelítő összeg}:
@@ -4323,10 +4332,10 @@ Ha az $[a; b]$-on folytonos f függvény nem vált előjelet, akkor $x = a, x = 
 \includegraphics[width=0.9\textwidth]{gorbe_alatti_terulet_integral}
 \end{figure}
 \end{theorem}
-\newpage
+
 \begin{theorem}
 Két függvény által közrezárt síkidom területe:
-$$t=\int_a^b(f(x)-g(x)) {\normalfont\text{ d}}x \text{, ha }f(x)>g(x)$$
+$$t=\int_a^b(f(x)-g(x)) {\normalfont\text{ d}}x \text{, ha }f(x)>g(x).$$
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.2\textwidth]{alakzat_terulete_integral}
