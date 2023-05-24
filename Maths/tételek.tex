@@ -857,16 +857,26 @@ A hatványozás kiterjesztése \textbf{racionális kitevőkre}:
 Az ``a'' pozitív valós szám $\dfrac{p}{q}$-adik hatványa az a pozitív valós szám, amelynek ``q''-adik hatványa ``$a^p$'':
 $$\left(a^{\frac{p}{q}}\right)^q=a^p, \hspace{30px}a>0\hspace{20px} p,q\in \mathbb{Z} \hspace{20px}q\neq 0$$
 \end{definition}
+A definícióból következik: $a^{\frac{p}{q}}=\sqrt[q]{a^p}$.
 
-\vspace{50px}
-A hatványozás kiterjesztése \textbf{irracionális kitevőkre}:
-Bármely irracionális szám tetszőlegesen közelíthető két oldalról racionális számokkal, pl.: $2^{\sqrt{2}}$, akkor a $\sqrt{2}$ értékét közelítjük nála nagyobb és kisebb racionális számokkal:
-\[ 2^1 < 2^{\sqrt{2}} < 2^2  \]
-\[2^{1,4} < 2^{\sqrt{2}} < 2^{1,5}\]
-\[2^{1,41} < 2^{\sqrt{2}} < 2^{1,42}\]
-\[2^{1,414} < 2^{\sqrt{2}} < 2^{1,415}\]
-$$\vdots$$
-Pontos definíció a határérték fogalmának bevezetésével adható, de bizonyítható, hogy $2^{\sqrt{2}}$ értéke létezik, és ily módon tetszőlegesen közelíthető.
+Az alap csak pozitív szám lehet, mert például:
+
+$(-2)^\frac{2}{4}=((-2)^2)^\frac{1}{4}=4^\frac{1}{4}=2^\frac{1}{2}=\sqrt{2}$ értelmes.
+
+$(-2)^\frac{2}{4}=(-2)^\frac{1}{2}=\sqrt{-2}$ nem valós, pedig a két hatvány értékének (azonos alap, azonos
+kitevő) meg kell egyeznie.
+\vspace{20px}
+
+A hatványozást kiterjeszthetjük tetszőleges \textbf{valós kitevő}re. Ehhez az \textbf{irracionális kitevő}t kell értelmeznünk.
+
+Az értelmezés azon alapul, hogy bármely irracionális szám tetszőlegesen közelíthető két oldalról racionális számokkal. Így ha pl.: $2^{\sqrt{2}}$ hatványt szeretnénk meghatározni, akkor ehhez a $\sqrt{2}$ értékét közelítjük nála kisebb, illetve nála nagyobb racionális számokkal, majd a közelítő értékekre, mint kitevőre emeljük a 2-t. Bizonyítható, hogy $2^{\sqrt{2}}$ értéke létezik, és ily módon tetszőlegesen közelíthető (rendőrelv).
+
+\begin{definition}
+Az a pozitív valós szám $\alpha$ \textbf{irracionális kitevőjű hatvány}a, azaz $a^{\alpha}$ jelentse az $a^r$ sorozat határértékét, ahol r egy racionális számsorozat tagjait jelöli és $r \to a$. Képlettel:
+\begin{equation}
+\lim_{r\to \alpha}a^r=a^{\alpha}.
+\end{equation}
+\end{definition}
 
 Így kiterjesztettük a hatványozást minden valós kitevőre.
 
@@ -4101,7 +4111,7 @@ A felszín jele: \textbf{A}.
 \textbf{Forgástestek felszíne:}
 
 \begin{theorem}
-Ha $f(x)$ függvény az $[a; b]$ intervallumon folytonos és $f(x) \geq 0$, akkor az $f(x)$ függvény grafikonjának az $x$ tengely körüli megforgatásával keletkezett forgástest palástjának felszíne:
+Ha $f(x)$ függvény az $[a; b]$ intervallumon folytonos, deriválható és $f(x) \geq 0$, akkor az $f(x)$ függvény grafikonjának az $x$ tengely körüli megforgatásával keletkezett forgástest palástjának felszíne:
 $$A=2\pi\int_a^bf(x)\cdot \sqrt{1+(f'(x))^2}{\normalfont\text{ d}}x$$
 Ha a forgástest teljes felszínét akarjuk meghatározni, akkor a kapott palásthoz hozzá kell adni az alaplap és a fedőlap területét is.
 \end{theorem}
@@ -4135,7 +4145,7 @@ $$V=\pi\int_a^bf^2(x){\normalfont\text{ d}}x$$
 A gömb származtatható egy félkör átmérő körüli megforgatásával, ezért térfogata $V=\pi\int_a^bf^2(x){\normalfont\text{ d}}x$  összefüggéssel meghatározható.
 
 Az origó középpontú, $r$ sugarú kör egyenlete $x^2 + y^2 = r^2$, ebből a $[-r; r]$ intervallumon értelmezett $f(x)=\sqrt{r^2-x^2}$ függvény grafikonja egy félkör, melynek $x$ tengely körüli megforgatásával származtatható az $r$ sugarú gömb. Így a gömb térfogata:
-$$V=\pi\int_{-r}^rf^2(x)\text{ d}x=\pi\int_{-r}^r(r^2-x^2)\text{ d}x=\pi\left[r^2\cdot x-\dfrac{x^3}{3} \right]^r_{-r}\text{ d}x=$$
+$$V=\pi\int_{-r}^rf^2(x)\text{ d}x=\pi\int_{-r}^r(r^2-x^2)\text{ d}x=\pi\left[r^2\cdot x-\dfrac{x^3}{3} \right]^r_{-r}=$$
 $$\pi\left[\left(r^2\cdot r-\dfrac{r^3}{3} \right)- \left(r^2\cdot (-r)-\dfrac{(-r)^3}{3} \right)\right]=\pi\left[\dfrac{2}{3}\cdot r^3-\left(-\dfrac{2}{3}\cdot r^3 \right) \right]=\pi\cdot \dfrac{4}{3}\cdot r^3$$
 \end{proof}
 
