@@ -591,22 +591,26 @@ A 10-es számrendszeren kívül az informatikában gyakran használják a 2-es, 
 
 A számot osztjuk az új számrendszer alapszámával, majd az így kapott hányadost újra mindaddig, míg 0 hányadost nem kapunk. Az osztásoknál kapott maradékok lesznek az új szám alaki értékei az egyesektől kezdve.
 
-Pl. $948_{10}$ a 7-es számrendszerbe átírva:
-\begin{align*}
-948 &= 135 \cdot 7 + 3 \\
-135 &= 19 \cdot 7 + 2 \\
-19 &= 2 \cdot 7 + 5 \\
-2 &= 0 \cdot 7 + 2
-\end{align*}
-Így $948_{10} = 2523_7$.
+Pl. $6_{10}$ a 2-es számrendszerbe átírva:
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c}
+6 & 0 \\
+3 & 1 \\
+1 & 1 \\
+0 & $\uparrow$
+\end{tabular}
+\end{table}
+
+Így $6_{10} = 110_2$.
 
 \vspace{30px}
 \textbf{Áttérés más alapúból 10-es számrendszerbe}
 
 A megfelelő helyi értékeknek és a hozzájuk tartozó alaki értékeknek a szorzatösszege adja a 10-es számrendszerbeli értéket:
 
-Pl.: $2523_7$ a 10-es számrendszerbe átírva:
-$$2523_7 = 2 \cdot 7^3 + 5 \cdot 7^2 + 2 \cdot 7^1 + 3 \cdot 1 = 948_{10}$$
+Pl.: $110_2$ a 10-es számrendszerbe átírva:
+$$110_2 = 1 \cdot 2^2 + 1 \cdot 2^1 + 0 \cdot 2^0 = 4 + 2 = 6_{10}$$
 A műveletek elvégezhetők az adott számrendszerben, vagy tízes számrendszerben és az eredmény adott számrendszerbe való visszaírásával.
 
 \subsection{Alkalmazások}
@@ -928,7 +932,7 @@ A hatványfüggvény vizsgálatát két részre kell bontanunk aszerint, hogy ``
 \begin{table}[h!]
 \centering
 \begin{tabular}{ | m{3cm} || m{6cm} | m{6cm} | }
-A függvény & $f:\mathbb{R}\rightarrow\mathbb{R}, f(x)=x^2$ & $g:\mathbb{R}\rightarrow\mathbb{R}, g(x)=x^3$ \\
+A függvény & $f:\mathbb{R}\rightarrow\mathbb{R}, f(x)=x^{2k}, k\in \mathbb{Z}^+$ & $g:\mathbb{R}\rightarrow\mathbb{R}, g(x)=x^{2k+1}, k\in \mathbb{Z}^+$ \\
 \hline
 Ábrázolása: &\centering \includegraphics[width=0.4\textwidth]{chart/2021-10-31--10:23:29} & \includegraphics[width=0.4\textwidth]{chart/2021-10-31--10:27:55}\\
 \hline
@@ -947,12 +951,17 @@ Görbölüte: & konvex & ha $x < 0$: konkáv, ha $x > 0$: konvex\\
 Paritás: & páros & páratlan \\
 \hline
 Korlátosság: & alulról korlátos, $k=0$ & nem korlátos \\
+\hline
+Invertálhatóság: & invertálható, ha $x \geq 0$: inverze az $f^{-1}:\mathbb{R}^+_0\to \mathbb{R}, f^{-1}(x)=\sqrt[2k]{x}$& invertálható: inverze a $g^{-1}:\mathbb{R}\to \mathbb{R}, g^{-1}(x)=\sqrt[2k+1]{x}$ \\
 \end{tabular}
 \caption{Hatványfüggvények és azok tulajdonságai}
 \label{table:hatv_fugg}
 \end{table}
 
-Görbület szempontjából külön kell venni az n = 1 esetet: ekkor a függvény se nem konvex, se nem konkáv.
+Görbület szempontjából külön kell venni az $n = 1$ esetet: ekkor a függvény se nem konvex, se nem konkáv.
+
+A hatványfüggvények folytonosak, minden pontban deriválhatóak, minden korlátos intervallumon
+integrálhatóak.
 
 \newpage
 \subsection{Négyzetgyökfüggvény és tulajdonságai}
@@ -982,11 +991,15 @@ Görbölete: & konkáv \\
 \hline
 Paritás: & nem páros és nem páratlan \\
 \hline
-Korlátosság: & alulról korlátos, $k=0$
+Korlátosság: & alulról korlátos, $k=0$ \\
+\hline
+Invertálhatóság: & invertálható: inverze az $f^{-1}:\mathbb{R}^+_0\to \mathbb{R}, f^{-1}(x)=x^2$ 
 \end{tabular}
 \caption{Négyzetgyökfüggvény és tulajdonságai}
 \label{table:gyok_fugg}
 \end{table}
+
+A gyökfüggvények folytonosak, differenciálhatóak, integrálhatóak.
 
 \subsection{Alkalmazások}
 Hatványozás:
@@ -1087,10 +1100,15 @@ Görbölüte: & konvex & konvex\\
 Paritás: & nem páros és nem páratlan & nem páros és nem páratlan \\
 \hline
 Korlátosság: & alulról korlátos, $k=0$ & alulról korlátos, $k=0$ \\
+\hline
+Invertálhatóság: & invertálható: inverze az $f^{-1}:\mathbb{R}^+\rightarrow\mathbb{R}, f^{-1}(x)=\log_ax$ & invertálható: inverze a $g^{-1}:\mathbb{R}^+\rightarrow\mathbb{R}, g^{-1}(x)=\log_ax$ \\
 \end{tabular}
 \caption{Exponenciális függvény és tulajdonságai}
 \label{table:exp_fugg}
 \end{table}
+
+Az exponenciális függvény folytonos, differenciálható, integrálható.
+
 \newpage
 \subsection{Logaritmusfüggvény}
 \begin{definition}
@@ -1407,6 +1425,8 @@ A \textbf{reprezentatív mintavétel}nél törekedni kell arra, hogy a vizsgált
 \begin{definition}
 Az egyes adatok előfordulásának a száma a \textbf{gyakoriság}. Az adatok összehasonlíthatósága miatt sokszor a gyakoriságnak a teljes adatsokasághoz viszonyított arányával, a \textbf{relatív gyakorisággal} dolgozunk, azaz a gyakoriságot osztjuk az adatok számával.
 \end{definition}
+
+Az adatokat megadhatjuk \textbf{táblázat}os formában, így az adatok áttekinthetően láthatók. Táblázat használatának előnye, hogy nagyobb adathalmazokat tömören, helytakarékosan ábrázolhatunk. Leggyakrabban a gyakorisági táblázatot használjuk, ez a lehetséges adatokat és a hozzájuk tartozó gyakoriságokat tartalmazza.
 
 \textbf{Osztályokba} soroljuk az adatokat, ha nagy méretű (sok adatból álló) adatsokasággal dolgozunk, vagy ha sok különböző érték van közel azonos gyakorisággal a sokaságban, akkor az egymáshoz közeli értékek összevonásával az adatokat osztályokba rendezzük. Az osztályba sorolásnál fontos szempont, hogy az osztályoknak diszjunktaknak (különállóknak), de hézagmentesnek kell lennie.
 
@@ -2144,43 +2164,25 @@ Lokális szélsőértéke van a differenciálható függvénynek $x_0$-ban, ha o
 
 \textbf{Szélsőérték-vizsgálat $f'(x)$ segítségével:} az $f(x)$ differenciálható függvényt deriváljuk, kiszámoljuk a deriváltfüggvény zérushelyét, majd a zérushely segítségével megállapítjuk deriváltjának előjelét. Ehhez vagy az alapfüggvények tulajdonságait használjuk, vagy a szorzat, illetve hányados előjelét vizsgáljuk. Utóbbira akkor van szükség, ha az első derivált nem az alapfüggvények közül kerül ki, ekkor a deriváltat a lehető legjobban szorzattá, illetve hányadossá alakítjuk. Az első derivált előjeléből következtetni tudunk a függvény monotonitási viszonyaira is: azon az intervallumon, ahol a függvény első deriváltja pozitív, a függvény nő, ahol negatív, ott a függvény csökken.
 
-Pl.: $f:\mathbb{R}^+\to \mathbb{R}, f(x)=x^3-3x\Rightarrow f'(x)=3x^2-3$.
-
-$f'(x)$ zérushelye: $x=\pm 1$
-
-$f'(x)$ előjele:
-\begin{itemize}
-\item $f'(x)>0$, ha $x<-1$, $f'(x)<0$, ha $-1<x<1$, tehát lokális maximuma van az $x = -1$ helyen, értéke $f(-1) = 2$.
-\item $f'(x)<0$, ha $-1<x<1$, $f'(x)>0$, ha $x>1$, tehát lokális minimuma van az $x = 1$ helyen, értéke $f(1) = -2$.
-\end{itemize}
-
-
-
-A függvény szigorúan monoton nő, ahol $f'(x) > 0$, azaz $x \in ]-\infty; -1[ \cup ]1; \infty[$, szigorúan monoton csökken, ahol $f'(x) < 0$, azaz $x \in ]-1; 1[$.
-
 \textbf{Szélsőérték-vizsgálat $f''(x)$ segítségével:} az $f(x)$ kétszer differenciálható függvényt kétszer deriváljuk, kiszámoljuk az első derivált zérushelyét, majd a zérushelyeket behelyettesítjük a második deriváltba, megállapítjuk második deriváltjának előjelét. A második derivált előjeléből következtetni tudunk a függvény görbületi viszonyaira is: azon az intervallumon, ahol a második deriváltja pozitív, a függvény konvex, ahol negatív, ott a függvény konkáv, ahol a második derivált előjelet vált és a függvény folytonos ebben a pontban, inflexiós pontja van a függvénynek.
 
-Pl.: $f:\mathbb{R}^+\to \mathbb{R}, f(x)=x^3-3x\Rightarrow f'(x)=3x^2-3\Rightarrow f''(x)=6x$.
-
-$f'(x)$ zérushelye: $x=\pm 1$
-
-$f'(x)$ előjele:
-\begin{itemize}
-\item $f''(-1) = -6$, tehát lokális maximuma van az $x = -1$ helyen, értéke $f(-1) = 2$.
-\item $f''(1) = 6$, tehát lokális minimuma van az $x = +1$ helyen, értéke $f(1) = -2$.
-\end{itemize}
-$f''(x) = 0$, ha x = 0, és ebben a pontban előjelet vált, negatívból pozitívba megy át, azaz a függvény konkávból konvexbe vált, vagyis inflexiós pontja van az $x = 0$ pontban.
-\newpage
+Pl.: $f:\mathbb{R}\to \mathbb{R}, f(x)=x^3-3x\Rightarrow f'(x)=3x^2-3\Rightarrow f''(x)=6x$.
 
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline 
- &  & -1 &  & 0 &  & 1 &  \\ 
+ & $x<-1$ & $x=-1$ & $-1<x<0$ & $x=0$ & $0<x<1$ & $x=1$ & $1<x$ \\ 
 \hline 
 $f'(x)$ & + & 0 & - & - & - & 0 & + \\ 
 \hline 
 $f''(x)$ & - & - & - & 0 & + & + & + \\ 
+\hline
 \hline 
- &  & lokális maximum &  & inflexiós pont &  & lokális mimimum &  \\ 
+$f(x)$ & nő &  & \multicolumn{3}{c|}{szig. mon. csökk.} &  & nő \\ 
+\hline
+$f(x)$ & \multicolumn{3}{c|}{konkáv} &  & \multicolumn{3}{c|}{konvex} \\ 
+\hline 
+\hline
+ &  & lok. max. &  & inflexiós pont &  & lok. min. &  \\ 
 \hline 
 \end{tabular} 
 
@@ -4317,10 +4319,9 @@ Tekintsük ennek a felosztásnak egy intervallumát: $[x_{i - 1}; x_i]$. Jelölj
 Az $[x_{i - 1}; x_i]$ intervallum fölé szerkesszünk olyan téglalapokat, amelyeknek másik oldala $m_i$, illetve $M_i$. Végezzük el a szerkesztést a felosztás minden intervallumában és egyesítsük a kisebb téglalapokat és a nagyobb téglalapokat külön két sokszögbe. Ekkor a vizsgált tartomány egy \textbf{beírt}, illetve egy \textbf{körülírt sokszögét} kapjuk. Ezeknek a sokszögeknek a területét vizsgáljuk.
 
 A beírt sokszög területe az \textbf{alsó közelítő összeg}:
-$$s_n=m_1(x_1-x_0)+m_2(x_2-x_1)+...+m_n(x_n-x_{n-1})$$
-
+$$s_n=\sum_{i=1}^n m_i(x_i-x_{i-1}).$$
 A körülírt sokszög területe a \textbf{felső közelítő összeg}:
-$$S_n=M_1(x_1-x_0)+M_2(x_2-x_1)+...+M_n(x_n-x_{n-1})$$
+$$S_n=\sum_{i=1}^n M_i(x_i-x_{i-1}).$$
 
 További osztópontokat véve a meglévőkhöz a felosztást finomítjuk, akkor $s_n$ általában nő, $S_n$ általában csökken, és ekkor a leghosszabb részintervallumok hossza is 0-hoz tart.
 
