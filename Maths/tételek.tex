@@ -3221,11 +3221,11 @@ $$\dfrac{\alpha}{\beta}=\dfrac{i_\alpha}{i_\beta}=\dfrac{t_\alpha}{t_\beta}$$
 \begin{theorem}
 Egy körben az $\alpha$ középponti szögű \textbf{körcikk területe}:
 $$\dfrac{t_\alpha}{r^2\pi}=\dfrac{a^\circ}{360^\circ}\Rightarrow t_\alpha=\dfrac{a^\circ}{360^\circ}\cdot r^2\pi$$
-$$\dfrac{t_\alpha}{r^2\pi}=\dfrac{\vec{\alpha}}{2\pi}\Rightarrow t_\alpha=\dfrac{r^2\vec{\alpha}}{2}$$
+$$\dfrac{t_\alpha}{r^2\pi}=\dfrac{\hat{\alpha}}{2\pi}\Rightarrow t_\alpha=\dfrac{r^2\hat{\alpha}}{2}$$
 
 A hozzátartozó \textbf{ív hossza}:
 $$\dfrac{i_\alpha}{2r\pi}=\dfrac{a^\circ}{360^\circ}\Rightarrow i_\alpha=\dfrac{a^\circ}{360^\circ}\cdot 2r\pi$$
-$$\dfrac{i_\alpha}{2r\pi}=\dfrac{\vec{\alpha}}{2\pi}\Rightarrow i_\alpha = r\vec{\alpha}$$
+$$\dfrac{i_\alpha}{2r\pi}=\dfrac{\hat{\alpha}}{2\pi}\Rightarrow i_\alpha = r\hat{\alpha}$$
 \end{theorem}
 \begin{theorem}
 Egy körben $\alpha$ középponti szögű körcikk \textbf{területe az ívhosszal} kifejezve: $t_\alpha=\dfrac{r\cdot i_\alpha}{2}$
@@ -3236,7 +3236,7 @@ Egy körben $\alpha$ középponti szögű körcikk \textbf{területe az ívhossz
 \end{theorem}
 
 \begin{theorem}
-\textbf{Körszelet területe: } $t=\dfrac{r^2}{2}(\vec{\alpha}-\sin \alpha)$
+\textbf{Körszelet területe: } $t=\dfrac{r^2}{2}(\hat{\alpha}-\sin \alpha)$
 \end{theorem}
 \subsection{Középponti és kerületi szögek}
 
@@ -3438,7 +3438,7 @@ Az $\vec{a} - \vec{b}$ és a $\vec{b} - \vec{a}$ egymás ellentettjei.
 \end{definition}
 
 \begin{definition}
-Egy nullvektortól különböző $\vec{a}$ vektor tetszőleges $\lambda$ valós számmal \textbf{(skalárral) vett szorzata} egy olyan vektor, amelynek abszolút értéke $|\lambda|\cdot |a|$ és $\lambda > 0$ esetén $\vec{a}$-val egyirányú, $\lambda < 0$ esetén $\vec{a}$-val ellentétes irányú.
+Egy nullvektortól különböző $\vec{a}$ vektor tetszőleges $\lambda$ valós számmal \textbf{(skalárral) vett szorzata} egy olyan vektor, amelynek abszolút értéke $|\lambda|\cdot |\vec{a}|$ és $\lambda > 0$ esetén $\vec{a}$-val egyirányú, $\lambda < 0$ esetén $\vec{a}$-val ellentétes irányú.
 
 A nullvektort bármilyen valós számmal szorozva nullvektort kapunk.
 \end{definition}
@@ -4892,6 +4892,10 @@ Az első ``n'' pozitív egész szám négyzetének összege: $\dfrac{n(n+1)(2n+1
 a skatulyaelv értelmében ha ``n'' skatulyába kell ``n''-nél több elemet szétosztani, akkor a skatulyák valamelyikébe szükségképpen legalább 2 elem kerül. Ha ``n'' skatulyába $k \cdot n$-nél több elemet kell szétosztani, akkor a skatulyák valamelyikébe legalább $k + 1$ elem kerül $(n,k\in \mathbb{Z}^+)$.
 \end{theorem}
 
+\begin{proof}
+Indirekt módon: ha az elv nem igaz, akkor minden skatulyába legfeljebb 1 elem kerül. Ekkor legfeljebb annyi elem van, ahány skatulya. ez ellentmondás, mert az elemek száma a skatulyák számánál több.
+\end{proof}
+
 Az elv végtelen halmazokra is alkalmazható, csak ilyenkor elemszám helyett számosságot kell használni.
 
 Skatulyaelvvel általában oszthatósági problémákat, csoportosítással kapcsolatos feladatokat oldhatunk meg.
@@ -4899,6 +4903,14 @@ Skatulyaelvvel általában oszthatósági problémákat, csoportosítással kapc
 \begin{theorem}
 Ha adott $n + 1$ darab pozitív egész szám, akkor ezek között biztosan van kettő olyan, amelyek különbsége osztható ``n''-nel.
 \end{theorem}
+
+\subsubsection*{Feladat}
+
+Bizonyítsuk be, hogy egy 37 fős társaságban biztosan van 4 olyan ember, akik ugyanabban a csillagjegyben születtek.
+
+\begin{proof}
+36 főnél előfordulhat az, hogy minden csillagjegyhez csak 3 ember tartozik, de a 37-edik ember biztosan valamelyik csillagjegynél a negyedik lesz.
+\end{proof}
 
 \subsection{Alkalmazások}
 \begin{itemize}
